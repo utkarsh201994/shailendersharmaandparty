@@ -1,25 +1,30 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { Menu, X, MessageCircle } from 'lucide-react';
+import { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { Menu, X, MessageCircle } from "lucide-react";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { label: 'Home', href: '#home' },
-    { label: 'About', href: '#about' },
-    { label: 'Gallery', href: '#gallery' },
-    { label: 'Awards', href: '#awards' },
-    { label: 'Videos', href: '#videos' },
-    { label: 'Services', href: '#services' },
-    { label: 'Contact', href: '#contact' },
+    { label: "Home", href: "#home" },
+    { label: "About", href: "#about" },
+    { label: "Gallery", href: "#gallery" },
+    { label: "Awards", href: "#awards" },
+    { label: "Videos", href: "#videos" },
+    { label: "Services", href: "#services" },
+    { label: "Contact", href: "#contact" },
   ];
 
-  const whatsappLink = 'https://wa.me/8076414767';
-
+  // const whatsappLink = "https://wa.me/9810262225";
+  const handleQuickWhatsApp = () => {
+    const message = encodeURIComponent(
+      "Hello, I would like to make a booking inquiry.",
+    );
+    window.open(`https://wa.me/918076414767?text=${message}`, "_blank");
+  };
   return (
     <header className="sticky top-0 z-50 bg-white shadow-md border-b-4 border-amber-600">
       <div className="max-w-7xl mx-auto px-4 py-3">
@@ -36,7 +41,9 @@ const Header = () => {
               />
             </div>
             <div className="hidden sm:block">
-              <h1 className="text-lg font-bold text-amber-900">Shailender Sharma </h1>
+              <h1 className="text-lg font-bold text-amber-900">
+                Shailender Sharma{" "}
+              </h1>
               <p className="text-base text-amber-700">& Party</p>
             </div>
           </div>
@@ -56,15 +63,15 @@ const Header = () => {
 
           {/* WhatsApp Button */}
           <div className="flex items-center gap-2">
-            <a
-              href={whatsappLink}
-              target="_blank"
+            <button
+              onClick={handleQuickWhatsApp}
+              type="button"
               rel="noopener noreferrer"
               className="hidden sm:flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-medium transition-colors"
             >
               <MessageCircle size={18} />
               <span>Book Now</span>
-            </a>
+            </button>
 
             {/* Mobile Menu Button */}
             <button
@@ -89,15 +96,15 @@ const Header = () => {
                 {item.label}
               </Link>
             ))}
-            <a
-              href={whatsappLink}
-              target="_blank"
+             <button
+              onClick={handleQuickWhatsApp}
+              type="button"
               rel="noopener noreferrer"
               className="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-medium transition-colors"
             >
               <MessageCircle size={18} />
               <span>Book on WhatsApp</span>
-            </a>
+            </button>
           </nav>
         )}
       </div>

@@ -107,7 +107,7 @@ Message: ${formData.message}`,
                 <div>
                   <h4 className="font-bold text-amber-900">Phone</h4>
                   <p className="text-gray-600">
-                    +91-8076414767 , +91-8076414767
+                    +91-9810262225 , +91-8076414767
                   </p>
                   <p className="text-sm text-gray-500">Available 24 hours</p>
                 </div>
@@ -148,6 +148,7 @@ Message: ${formData.message}`,
                   <p className="text-gray-600">Quick booking & inquiries</p>
                   <button
                     onClick={handleQuickWhatsApp}
+                    type="button"
                     className="inline-flex items-center gap-2 mt-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-medium transition-colors"
                   >
                     <MessageCircle size={18} />

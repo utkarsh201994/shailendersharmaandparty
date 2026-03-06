@@ -9,26 +9,22 @@ const Hero = () => {
 
   const slides = [
     {
-      image:
-        "/assets/hero2.jpg",
+      image: "/assets/hero2.jpg",
       title: "Shailender Sharma & Party",
       subtitle: "With the Blessings of Mata Rani",
     },
     {
-      image:
-        "/assets/hero3.jpg",
+      image: "/assets/hero3.jpg",
       title: "Divine Spiritual Events",
       subtitle: "Celebrating Devotion & Culture",
     },
     {
-      image:
-        "/assets/hero4.jpg",
+      image: "/assets/hero4.jpg",
       title: "Professional Jagran Organization",
       subtitle: "Over 51,000 Successful Events",
     },
-       {
-      image:
-        "/assets/hero1.jpg",
+    {
+      image: "/assets/hero1.jpg",
       title: "Professional Bhajan Singer",
       subtitle: "Jai mata di",
     },
@@ -49,7 +45,13 @@ const Hero = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
-  const whatsappLink = "https://wa.me/8076414767";
+  // ✅ Quick WhatsApp button message
+  const handleQuickWhatsApp = () => {
+    const message = encodeURIComponent(
+      "Hello, I would like to make a booking inquiry.",
+    );
+    window.open(`https://wa.me/918076414767?text=${message}`, "_blank");
+  };
 
   return (
     <section
@@ -92,15 +94,15 @@ const Hero = () => {
           >
             Book Now
           </a>
-          <a
-            href={whatsappLink}
-            target="_blank"
+          <button
+            onClick={handleQuickWhatsApp}
+            type="button"
             rel="noopener noreferrer"
             className="bg-linear-to-r from-green-500 to-green-600 text-white px-8 py-3 rounded-lg font-bold text-lg transition-colors flex items-center justify-center gap-2"
           >
             <MessageCircle size={20} />
             WhatsApp
-          </a>
+          </button>
         </div>
       </div>
 
